@@ -2,10 +2,13 @@
 
 {
   environment.systemPackages = with pkgs; [
+    hyprpolkitagent
     firefox-devedition
     dolphin
     ghostty
   ];
+
+  security.polkit.enable = true;
 
   # Enable CUPS to print documents
   services.printing.enable = true;
