@@ -1,0 +1,31 @@
+{ config, pkgs, ... }:
+
+{
+  programs.hyprland = {
+    enable = true;
+  };
+
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+        user = "greeter";
+      };
+    };
+  };
+  
+  environment.systemPackages = with pkgs; [
+    kdePackages.kdegraphics-thumbnailers
+    libsForQt5.ffmpegthumbs
+    kdePackages.qtsvg
+    libsForQt5.kio-extras
+
+    light
+    mako
+    waybar
+    wofi
+  ];
+}
