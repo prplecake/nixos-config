@@ -16,6 +16,14 @@
       };
     };
   };
+
+  fonts = {
+    fontDir.enable = true;
+    packages = with pkgs; [
+      font-awesome
+      jetbrains-mono
+    ];
+  };
   
   environment.systemPackages = with pkgs; [
     kdePackages.kdegraphics-thumbnailers
