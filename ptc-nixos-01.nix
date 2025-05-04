@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware/dell-latitude-e5450.nix
+      ./common/common.nix
       ./roles/desktop.nix
       ./modules/1password.nix
     ];
@@ -68,9 +69,6 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-     git
-     tmux
-     neovim
      mako
      slurp
      grim
