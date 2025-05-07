@@ -36,6 +36,10 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  environment.variables = {
+    PIPEWIRE_DEFAULT_AUDIO_SINK = "alsa_output.pci-0000_00_03.0.hdmi-stereo";
+  };
+
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
@@ -89,7 +93,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
