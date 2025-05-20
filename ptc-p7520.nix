@@ -11,6 +11,7 @@
       ./roles/desktop.nix
       ./modules/1password.nix
       ./modules/android.nix
+      ./modules/todoist.nix
     ];
 
   # Bootloader.
