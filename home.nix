@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./lua.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "prplecake";
@@ -27,6 +31,10 @@
     nmap
     dig
     rbenv
+    wget
+    fd
+    gh
+
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -41,6 +49,11 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  programs.git = {
+    userName = "Matthew Jorgensen";
+    userEmail = "me@prplecake.com";
+  };
 
   programs.zsh.enable = true;
   programs.tmux = {
