@@ -4,6 +4,7 @@
   programs.hyprland = {
     enable = true;
   };
+  programs.hyprlock.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -30,6 +31,8 @@
     libsForQt5.ffmpegthumbs
     kdePackages.qtsvg
     libsForQt5.kio-extras
+    hyprpolkitagent
+
 
     light
     mako

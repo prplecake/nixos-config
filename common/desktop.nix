@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    hyprpolkitagent
     firefox-devedition
     kdePackages.dolphin
     ghostty
