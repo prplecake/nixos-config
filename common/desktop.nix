@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     hyprpolkitagent
     firefox-devedition
-    dolphin
+    kdePackages.dolphin
     ghostty
   ];
 
@@ -14,7 +14,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
