@@ -3,6 +3,8 @@
 {
   programs.hyprland = {
     enable = true;
+    withUWSM = true;
+    xwayland.enable = true;
   };
   programs.hyprlock.enable = true;
 
@@ -31,8 +33,12 @@
     libsForQt5.ffmpegthumbs
     kdePackages.qtsvg
     libsForQt5.kio-extras
+    qt6.qtwayland
+    libxcb
+    libxcb-cursor
     hyprpolkitagent
-
+    hypridle
+    hyprlock
 
     light
     mako
