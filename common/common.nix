@@ -6,5 +6,6 @@
     tmux
     neovim
     btop
+    progress
   ];
 }
