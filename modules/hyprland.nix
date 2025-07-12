@@ -34,8 +34,7 @@
     kdePackages.qtsvg
     libsForQt5.kio-extras
     qt6.qtwayland
-    libxcb
-    libxcb-cursor
+    xorg.libxcb
     hyprpolkitagent
     hypridle
     hyprlock
