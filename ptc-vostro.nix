@@ -11,6 +11,7 @@
       ./roles/desktop.nix
       ./modules/1password.nix
       ./modules/sdr.nix
+      ./modules/rpi-imager.nix
     ];
 
   # Bootloader.
