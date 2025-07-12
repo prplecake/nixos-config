@@ -7,6 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      ./common/common.nix
       ./hardware/dell-vostro-7500.nix
       ./roles/desktop.nix
       ./modules/1password.nix
