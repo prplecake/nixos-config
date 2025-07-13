@@ -24,6 +24,7 @@
   home.packages = with pkgs; [
     neovim
     git
+    git-lfs
     ripgrep
     age
     avrdude
@@ -34,6 +35,10 @@
     wget
     fd
     gh
+    tree
+    hugo
+    mitmproxy
+    btop
 
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -70,6 +75,11 @@
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
 
+    ".gitconfig".source = ~/.dotfiles/git/gitconfig.symlink;
+    ".mutt".source = ~/.dotfiles/mutt.symlink;
+    ".tmux.conf".source = ~/.dotfiles/tmux/tmux.conf.symlink;
+    ".vim".source = ~/.dotfiles/vim/vim.symlink;
+    ".vimrc".source = ~/.dotfiles/vim/vimrc.symlink;
     ".zshrc".source = ~/.dotfiles/zsh/zshrc.symlink;
 
     # # You can also set the file content immediately.
