@@ -40,6 +40,7 @@
     mitmproxy
     btop
     pandoc
+    groff
 
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
