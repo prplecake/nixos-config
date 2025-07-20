@@ -41,6 +41,11 @@
     btop
     pandoc
     groff
+    php
+    php84Packages.composer
+    cargo
+    julia-bin
+    tree-sitter
 
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
