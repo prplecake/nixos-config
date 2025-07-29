@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+let neovimPackages = import ./neovim-packages.nix { pkgs: pkgs; };
+in
 {
   imports = [
     ./lua.nix
@@ -22,30 +24,20 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    neovim
     git
     git-lfs
-    ripgrep
     age
     avrdude
     go
     nmap
     dig
     rbenv
-    wget
-    fd
     gh
     tree
     hugo
     mitmproxy
     btop
     pandoc
-    groff
-    php
-    php84Packages.composer
-    cargo
-    julia-bin
-    tree-sitter
 
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -60,7 +52,8 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-  ];
+  ]
+  ++ neovimPackages.neovim;
 
   programs.git = {
     userName = "Matthew Jorgensen";
