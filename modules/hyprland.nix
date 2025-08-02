@@ -39,9 +39,13 @@
     hypridle
     hyprlock
 
+    brightnessctl
     light
     mako
     waybar
     wofi
+    wl-clipboard
+    grim
+    slurp
   ];
 }
