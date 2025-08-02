@@ -16,5 +16,6 @@
     rtl-sdr
     sdrpp
     gqrx
+    sdrangel
   ];
 }
