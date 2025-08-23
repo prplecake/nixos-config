@@ -8,6 +8,7 @@
       ripgrep
       wget
       fd
+      go
       groff
       php
       php84Packages.composer
