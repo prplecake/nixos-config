@@ -12,6 +12,7 @@
   environment.etc = {
     "1password/custom_allowed_browsers" = {
       text = ''
+        vivaldi-bin
         firefox-devedition
       '';
       mode = "0755";
