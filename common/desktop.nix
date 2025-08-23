@@ -3,6 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     firefox-devedition
+    vivaldi
+    vivaldi-ffmpeg-codecs
     kdePackages.dolphin
     ghostty
   ];
