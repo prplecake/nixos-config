@@ -4,6 +4,8 @@
 
 { config, pkgs, ... }:
 
+let neovimPackages = import ./neovim-packages.nix { pkgs = pkgs; };
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -102,7 +104,8 @@
     git
     ghostty
     firefox-devedition
-  ];
+  ]
+  ++ neovimPackages.neovim;
 
   fonts = {
     fontDir.enable = true;
