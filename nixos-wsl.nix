@@ -7,7 +7,9 @@
 
 { config, lib, pkgs, ... }:
 
-let neovimPackages = import ./neovim-packages.nix { pkgs = pkgs; };
+let 
+  neovimPackages = import ./neovim-packages.nix { pkgs = pkgs; };
+  commonPackages = import ./common-packages.nix { pkgs = pkgs; };
 in 
 {
   imports = [
@@ -27,6 +29,7 @@ in
     whois
     dnsutils
   ]
+  ++ commonPackages.packages
   ++ neovimPackages.neovim;
 
   # This value determines the NixOS release from which the default

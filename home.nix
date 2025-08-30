@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
-let neovimPackages = import ./neovim-packages.nix { pkgs: pkgs; };
+let 
+    neovimPackages = import ./neovim-packages.nix { pkgs = pkgs; };
+    commonPackages  = import ./common-packages.nix { pkgs = pkgs; };
 in
 {
   imports = [
@@ -54,6 +56,7 @@ in
     #   echo "Hello, ${config.home.username}!"
     # '')
   ]
+  ++ commonPackages.packages
   ++ neovimPackages.neovim;
 
   programs.git = {
