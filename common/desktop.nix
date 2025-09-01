@@ -7,6 +7,8 @@
     vivaldi-ffmpeg-codecs
     kdePackages.dolphin
     ghostty
+
+    libnotify
   ];
 
   security.polkit.enable = true;
