@@ -4,6 +4,10 @@
 
 { config, pkgs, ... }:
 
+let 
+  neovimPackages = import ./neovim-packages.nix { pkgs = pkgs; };
+  commonPackages = import ./common-packages.nix { pkgs = pkgs; };
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -55,10 +59,21 @@
   users.users.prplecake = {
     isNormalUser = true;
     description = "prplecake";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "video"
+      "audio"
+      "cdrom"
+      "pipewire"
+      ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
+
+  security.sudo.extraRules = [
+    { users = [ "ALL" ]; commands = [ "${pkgs.light}/bin/light" ]; }
+  ];
 
   programs.zsh.enable = true;
 
@@ -67,15 +82,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
      mako
      slurp
      grim
      wl-clipboard
      firefox-devedition
      ghostty
-  ];
+  ]
+  ++ commonPackages.packages
+  ++ neovimPackages.neovim;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
